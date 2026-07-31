@@ -1,0 +1,24 @@
+# Otterize
+
+> Otterize is an open-source, Kubernetes-native platform for intent-based access control (IBAC). Services declare which other services they need to reach via ClientIntents, and Otterize automatically provisions and enforces the underlying controls — Kubernetes NetworkPolicies, AWS/GCP/Azure IAM, Istio Authorization Policies, Kafka ACLs, and database (MySQL/PostgreSQL) access. Otterize was acquired by Cyera; otterize.com now redirects to cyera.com, while the open-source components, docs, and CLI remain live.
+
+## Components
+- Intents Operator: https://github.com/otterize/intents-operator
+- Credentials Operator: https://github.com/otterize/credentials-operator
+- Network Mapper: https://github.com/otterize/network-mapper
+- Otterize CLI: https://github.com/otterize/otterize-cli
+
+## Docs
+- Documentation: https://docs.otterize.com/
+- Getting started: https://docs.otterize.com/
+- CLI reference: https://docs.otterize.com/reference/cli
+- Features (integrations): https://docs.otterize.com/features/network-mapping-network-policies
+
+## Developer surface
+- GitHub organization: https://github.com/otterize
+- Helm charts: https://helm.otterize.com
+- Community Slack: https://joinslack.otterize.com
+
+## Notes for agents
+- There is no public REST/OpenAPI, GraphQL, or gRPC specification. The primary interfaces are the `otterize` CLI, Kubernetes Custom Resources (ClientIntents), and Helm-deployed operators.
+- The Otterize Cloud API is consumed by the CLI (auth via `otterize login` OAuth, or client-id/client-secret/token); no spec is published and the Cloud app host was not reachable at profiling time.

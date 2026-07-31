@@ -1,0 +1,38 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/otterize/otterize-cli/releases
+subject: otterize-cli
+scheme: semver
+current_version: 2.0.3
+note: >-
+  Otterize publishes no aggregate product changelog; release history lives in the
+  per-component GitHub releases. This captures the recent window of the CLI
+  releases. otterize.com was acquired (marketing site now redirects to Cyera);
+  the open-source components and docs remain live.
+entries:
+  - version: 2.0.3
+    date: '2025-04-24'
+    breaking: false
+    highlights:
+      - Added debug logging of HTTP API requests and their duration
+      - Optimized namespace query performance in clientintents export
+  - version: 2.0.2
+    date: '2025-04-21'
+    breaking: false
+    highlights:
+      - Fixed otterize-cli login failing for users belonging to multiple organizations
+  - version: 2.0.1
+    date: '2025-04-16'
+    breaking: false
+    highlights:
+      - Added a time filter to the clientintents export command (default one-hour window)
+  - version: 2.0.0
+    date: '2025-02-21'
+    breaking: true
+    highlights:
+      - Changed default ClientIntents export version to v2 (breaking for callers expecting v1 output)
+  - version: 1.0.15
+    date: '2025-02-16'
+    breaking: false
+    highlights:
+      - Fixed inconsistent stderr output styling across some CLI commands

@@ -1,0 +1,33 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.otterize.com/reference/cli
+note: >-
+  Otterize publishes no OpenAPI/GraphQL spec, so this profile is captured from the
+  documented Otterize Cloud API / CLI authentication surface rather than derived
+  from security schemes. The Otterize Cloud API is reached by the CLI and by
+  in-cluster operators.
+summary:
+  types: [oauth2, apiKey]
+  api_key_in: [header]
+  oauth2_flows: [authorizationCode, clientCredentials]
+schemes:
+  - name: cloud-oauth-browser
+    type: oauth2
+    flow: authorizationCode
+    description: >-
+      Interactive browser-based login to Otterize Cloud via `otterize login`;
+      the CLI opens a browser to authenticate the user and stores the resulting
+      credentials in ~/.otterize/config.
+  - name: cloud-client-credentials
+    type: oauth2
+    flow: clientCredentials
+    description: >-
+      Non-interactive service authentication using a client id + client secret
+      (`--client-id` / `--client-secret`), used by CI and by cluster-side
+      integrations to obtain a token for the Otterize Cloud API.
+  - name: cloud-token
+    type: apiKey
+    in: header
+    description: >-
+      A pre-issued bearer token may be supplied directly via `--token` for the
+      CLI / Cloud API calls.

@@ -1,0 +1,70 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/otterize/otterize-cli and https://raw.githubusercontent.com/otterize/otterize-cli/main/README.md
+note: >-
+  Otterize ships no client-library SDKs. Its first-party distributables are the
+  open-source CLI (Homebrew/Scoop/GitHub-release binaries), the Helm charts for
+  the operators, and Terraform modules. All are cataloged here as Packages; none
+  qualify as a language SDK, so no SDKs pointer is emitted.
+packages:
+  - kind: cli
+    language: go
+    registry: homebrew
+    name: otterize-cli
+    tap: otterize/otterize
+    url: https://github.com/otterize/homebrew-otterize
+    install: brew install otterize/otterize/otterize-cli
+    version: 2.0.3
+    license: Apache-2.0
+    official: true
+  - kind: cli
+    language: go
+    registry: scoop
+    name: otterize-cli
+    bucket: https://github.com/otterize/scoop-otterize-cli
+    url: https://github.com/otterize/scoop-otterize-cli
+    install: |
+      scoop bucket add otterize-cli https://github.com/otterize/scoop-otterize-cli
+      scoop install otterize-cli
+    official: true
+  - kind: cli
+    language: go
+    registry: github-releases
+    name: otterize-cli
+    url: https://github.com/otterize/otterize-cli/releases
+    install: wget https://get.otterize.com/otterize-cli/v2.0.3/otterize_linux_x86_64.tar.gz
+    version: 2.0.3
+    official: true
+  - kind: helm-chart
+    registry: helm
+    name: network-mapper
+    repo: https://helm.otterize.com
+    url: https://github.com/otterize/helm-charts
+    install: |
+      helm repo add otterize https://helm.otterize.com
+      helm install network-mapper otterize/network-mapper -n otterize-system --create-namespace
+    official: true
+  - kind: helm-chart
+    registry: helm
+    name: intents-operator
+    repo: https://helm.otterize.com
+    url: https://github.com/otterize/intents-operator
+    install: helm install intents-operator otterize/intents-operator -n otterize-system
+    official: true
+  - kind: helm-chart
+    registry: helm
+    name: credentials-operator
+    repo: https://helm.otterize.com
+    url: https://github.com/otterize/credentials-operator
+    install: helm install credentials-operator otterize/credentials-operator -n otterize-system
+    official: true
+  - kind: terraform-module
+    registry: terraform
+    name: terraform-aws-otterize-aws-iam
+    url: https://github.com/otterize/terraform-aws-otterize-aws-iam
+    official: true
+  - kind: terraform-module
+    registry: terraform
+    name: terraform-azure-otterize-azure-iam
+    url: https://github.com/otterize/terraform-azure-otterize-azure-iam
+    official: true

@@ -1,0 +1,59 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.otterize.com/reference/cli
+repo: https://github.com/otterize/otterize-cli
+binary: otterize
+language: go
+license: Apache-2.0
+current_version: 2.0.3
+description: >-
+  The Otterize CLI controls and queries the Otterize network mapper in a
+  Kubernetes cluster, manipulates local ClientIntents files, and interacts with
+  the Otterize Cloud API. It follows a NOUN VERB command structure.
+install:
+  - platform: macos
+    method: homebrew
+    command: brew install otterize/otterize/otterize-cli
+  - platform: linux
+    method: binary
+    command: |
+      wget https://get.otterize.com/otterize-cli/v2.0.3/otterize_linux_x86_64.tar.gz
+      tar xf otterize_linux_x86_64.tar.gz && sudo cp otterize /usr/local/bin
+  - platform: windows
+    method: scoop
+    command: |
+      scoop bucket add otterize-cli https://github.com/otterize/scoop-otterize-cli
+      scoop install otterize-cli
+authentication:
+  command: otterize login
+  flow: browser-based OAuth to Otterize Cloud (device/interactive)
+  non_interactive: [--client-id, --client-secret, --token]
+  multi_org: [--switch-account, --switch-org]
+  config_path: ~/.otterize/config
+commands:
+  - name: network-mapper
+    aliases: [mapper]
+    summary: Interact with the Otterize network mapper in the cluster (list/export/reset discovered traffic)
+  - name: intents
+    summary: Convert and transform local ClientIntents files between YAML formats
+  - name: login
+    summary: Authenticate the CLI with Otterize Cloud
+  - name: version
+    summary: Display the CLI version and the Otterize Cloud API version
+  - name: environments
+    summary: Manage Otterize Cloud deployment environments
+  - name: integrations
+    summary: Manage Kubernetes and generic Otterize Cloud integrations
+  - name: invites
+    summary: Manage user invitations to the organization
+  - name: namespaces
+    summary: Work with Kubernetes namespaces known to Otterize Cloud
+  - name: organizations
+    summary: Administer Otterize Cloud organizations
+  - name: services
+    summary: Query services discovered by the network mapper / Cloud
+  - name: users
+    summary: Manage user accounts
+telemetry:
+  anonymous: true
+  opt_out: --telemetry-enabled=false  # or OTTERIZE_TELEMETRY_ENABLED=false

@@ -1,8 +1,18 @@
 aid: otterize
 name: Otterize
-description: 'Otterize is a company surfaced as a portfolio company of index-ventures and added to the
-  API Evangelist network as a stub for enrichment. Sector: business-applications. This profile is a lead
-  awaiting the enrichment pipeline.'
+description: >-
+  Otterize is an open-source, Kubernetes-native platform for intent-based access
+  control (IBAC). Application teams declare which services need to talk to which
+  other services using ClientIntents, and Otterize automatically calculates,
+  provisions, and enforces the underlying access controls: Kubernetes
+  NetworkPolicies, AWS/GCP/Azure IAM, Istio Authorization Policies, Kafka ACLs,
+  and MySQL/PostgreSQL grants. It ships three open-source operators (intents
+  operator, credentials operator, network mapper) deployed via Helm, a Go CLI,
+  and a managed Otterize Cloud. Its developer surface is the CLI, Kubernetes
+  Custom Resources, and Helm/Terraform tooling rather than a public REST API.
+  Otterize was surfaced as an Index Ventures portfolio company; otterize.com now
+  redirects to Cyera following acquisition, while the open-source components,
+  documentation, and CLI remain live.
 url: https://raw.githubusercontent.com/api-evangelist/otterize/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -10,12 +20,32 @@ x-backed-by:
 - index-ventures
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://avatars.githubusercontent.com/otterize
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
 - Business Applications
+- Kubernetes
+- Access Control
+- Cloud Native Security
+- Zero Trust
+- DevSecOps
+- IAM
+- Open Source
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -25,3 +55,30 @@ maintainers:
 common:
 - type: Website
   url: https://otterize.com/
+- type: DeveloperPortal
+  url: https://docs.otterize.com/
+- type: Documentation
+  url: https://docs.otterize.com/
+- type: GettingStarted
+  url: https://docs.otterize.com/
+- type: GitHubOrganization
+  url: https://github.com/otterize
+- type: Support
+  url: https://joinslack.otterize.com
+- type: Packages
+  url: packages/otterize-packages.yml
+- type: CLI
+  url: cli/otterize-cli.yml
+- type: ChangeLog
+  url: changelog/otterize-changelog.yml
+- type: Authentication
+  url: authentication/otterize-authentication.yml
+- type: DomainSecurity
+  url: security/otterize-domain-security.yml
+- type: LLMsTxt
+  url: llms/otterize-llms.txt
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 6
+  pass: local-v1
